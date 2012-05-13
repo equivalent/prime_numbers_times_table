@@ -1,4 +1,5 @@
-#!/usr/local/bin/ruby
+#!ruby
+
 class PrimeNumber
   class << self 
     def generate(how_much)
@@ -54,3 +55,4 @@ private
     times_table
   end
 end
+
