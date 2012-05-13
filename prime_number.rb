@@ -31,5 +31,16 @@ class PrimeNumber
     @prime_numbers = self.class.generate(how_many)
   end
 
+  def generate_times_table
+    time_table =[ ([nil] + prime_numbers) ] #first row
+    @prime_numbers.each do |prime_number|
+      row_array = [prime_number]
+      prime_numbers.each do |col_prime_number|
+        row_array << (col_prime_number * prime_number)
+      end
+      time_table << row_array
+    end
+    return time_table
+  end
 
 end
