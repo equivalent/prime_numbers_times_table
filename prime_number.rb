@@ -23,4 +23,13 @@ class PrimeNumber
       return array_of_primes
     end
   end
+
+  #instant methods
+  attr_reader :prime_numbers
+
+  def initialize(how_many)
+    @prime_numbers = self.class.generate(how_many)
+  end
+
+
 end
