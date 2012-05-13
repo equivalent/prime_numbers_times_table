@@ -28,7 +28,14 @@ describe PrimeNumber do
   end
 
   describe 'generate_times_table' do
-
+    context 'when dealing with 10 numbers' do
+      xit 'should output table with 11 rows and 11 colls'
+      # 11 because 10 as times table and 1 header what prime number I'm doing math with
+      xit 'first items in row should be prime'
+      xit 'first items in coll should be prime'
+      xit 'items inside times table sould be muliplied'
+      xit 'should print coll value with tabulators'
+    end
   end
 
 end
