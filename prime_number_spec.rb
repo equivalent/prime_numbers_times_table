@@ -17,10 +17,13 @@ describe PrimeNumber do
   end
 
   describe 'initialize' do
-    xit 'should set first 10 numbers by default'
     it 'should call PrimeNmuber.generate once' do
       PrimeNumber.should_receive(:generate).once.with(11)
       PrimeNumber.new(11)
+    end
+    it 'should set first 10 numbers by default' do
+      PrimeNumber.should_receive(:generate).once.with(10)
+      PrimeNumber.new
     end
   end
 

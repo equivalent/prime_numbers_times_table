@@ -27,7 +27,7 @@ class PrimeNumber
   #instant methods
   attr_reader :prime_numbers
 
-  def initialize(how_many)
+  def initialize(how_many=10)
     @prime_numbers = self.class.generate(how_many)
   end
 
