@@ -21,10 +21,12 @@ describe PrimeNumber do
       PrimeNumber.should_receive(:generate).once.with(11)
       PrimeNumber.new(11)
     end
+
     it 'should set first 10 numbers by default' do
       PrimeNumber.should_receive(:generate).once.with(10)
       PrimeNumber.new
     end
+
     it 'should set @prime_numbers with Array of primes' do
       # I need to be 100% sure that's an array
       prime_instance=PrimeNumber.new(11)
@@ -36,7 +38,7 @@ describe PrimeNumber do
   describe 'generate_times_table' do
     context 'when dealing with 10 numbers' do
       let(:prime_instance){PrimeNumber.new(10)}
-      let(:times_table_array){ prime_instance.generate_times_table }
+      let(:times_table_array){ prime_instance.send(:generate_times_table) }
 
       it 'should be array of arrays' do
         times_table_array.should be_kind_of(Array)
@@ -74,11 +76,15 @@ describe PrimeNumber do
         times_table_array[3].should == [5, 10, 15, 25, 35, 55, 65, 85, 95, 115, 145] # 5 * 
         times_table_array[10].should == [29, 58, 87, 145, 203, 319, 377, 493, 551, 667, 841] # 29 *
       end
+
     end
   end
 
   describe 'print_times_table' do
-    xit 'should print coll value with tabulators'
-    xit 'should call generate_times_table'
+    it 'should call generate_times_table' do
+      instance = PrimeNumber.new
+      instance.should_receive(:generate_times_table).once.and_return([[nil]])
+      instance.print_times_table
+    end
   end
 end
